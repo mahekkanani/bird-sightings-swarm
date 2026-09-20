@@ -1,0 +1,13 @@
+{
+  "name": "@deccan-birders/writer",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@deccan-birders/format": "*",
+    "@ethersphere/bee-js": "latest",
+    "@snaha/swarm-id": "latest"
+  }
+}

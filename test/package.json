@@ -1,0 +1,17 @@
+{
+  "name": "@deccan-birders/test",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@deccan-birders/format": "*",
+    "@deccan-birders/writer": "*",
+    "@deccan-birders/reader": "*",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "echo \"No build required for test\""
+  }
+}

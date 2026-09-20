@@ -1,0 +1,19 @@
+{
+  "name": "bird-sightings-swarm",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "test"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspace=@deccan-birders/test",
+    "start:writer": "npm run start --workspace=apps/writer",
+    "start:reader": "npm run start --workspace=apps/reader"
+  },
+  "dependencies": {
+    "@snaha/swarm-id": "^0.4.1"
+  }
+}
