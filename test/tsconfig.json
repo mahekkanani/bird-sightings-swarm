@@ -7,12 +7,8 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["jest", "node"]
   },
-  "include": ["**/*"],
-  "references": [
-    { "path": "../packages/format" },
-    { "path": "../apps/writer" },
-    { "path": "../apps/reader" }
-  ]
+  "include": ["**/*.spec.ts"]
 }

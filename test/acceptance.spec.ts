@@ -9,11 +9,11 @@ let hasIdentity = true;
 
 jest.mock('@ethersphere/bee-js', () => {
   return {
-    Bee: jest.fn().mockImplementation((url) => {
+    Bee: jest.fn().mockImplementation((url: string) => {
       // 5. Records are read through the same endpoint family used for writing
       return {
         data: {
-          download: jest.fn().mockImplementation(async (ref) => {
+          download: jest.fn().mockImplementation(async (ref: string) => {
             if (ref !== 'mock-reference-123') throw new Error('Not found');
             return {
               toUint8Array: () => uploadedData
@@ -23,11 +23,11 @@ jest.mock('@ethersphere/bee-js', () => {
       };
     })
   };
-});
+}, { virtual: true });
 
 jest.mock('@snaha/swarm-id', () => {
   return {
-    SwarmIdClient: jest.fn().mockImplementation((config) => {
+    SwarmIdClient: jest.fn().mockImplementation((config: any) => {
       // 2. subsidized gateway is configured
       if (!config.subsidisedGatewayUrl) {
          throw new Error('subsidisedGatewayUrl missing');
@@ -41,7 +41,7 @@ jest.mock('@snaha/swarm-id', () => {
             canUpload: mockUploadCapability
           };
         },
-        uploadData: jest.fn().mockImplementation(async (payload) => {
+        uploadData: jest.fn().mockImplementation(async (payload: Uint8Array) => {
           if (mockUploadReject) {
             const err = new Error('Payment required');
             (err as any).status = 402;
@@ -53,7 +53,7 @@ jest.mock('@snaha/swarm-id', () => {
       };
     })
   };
-});
+}, { virtual: true });
 
 describe('Deccan Birders Acceptance Criteria', () => {
   beforeEach(() => {

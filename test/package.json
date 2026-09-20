@@ -4,14 +4,17 @@
   "private": true,
   "dependencies": {
     "@deccan-birders/format": "*",
-    "@deccan-birders/writer": "*",
     "@deccan-birders/reader": "*",
+    "@deccan-birders/writer": "*",
     "jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "@types/jest": "^29.0.0"
+    "ts-jest": "^29.0.0"
   },
   "scripts": {
     "test": "jest",
     "build": "echo \"No build required for test\""
+  },
+  "devDependencies": {
+    "@snaha/swarm-id": "^0.4.1",
+    "@types/jest": "^30.0.0"
   }
 }
